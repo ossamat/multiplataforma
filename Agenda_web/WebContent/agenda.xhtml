@@ -1,0 +1,51 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+
+<h:head>
+    <title>Agenda WEB</title>
+
+</h:head>
+<h:body>
+
+
+    <h:form id="form1">
+
+
+<h3>PDF</h3>
+<p:imageCompare leftImage="/img/Gmail-icon.png"
+                        rightImage="/img/Gmail.png"
+                        width="450" height="435"/>
+
+    
+            <br />
+            <br />
+            <p:fieldset id="consul" legend="#{messagesUtil.getValor('consulta')}">
+
+
+
+                <p:commandButton value="#{messagesUtil.getValor('consultar')}"
+                    id="consulta" action="#{pessoaBean.recuperarPessoa()}" ajax="true"
+                    update=":form1">
+
+                </p:commandButton>
+                
+                
+                <p:inputText value="#{pessoaBean.nomePessoa}" />
+
+            </p:fieldset>
+   
+          
+    </h:form>
+
+</h:body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ====================================================================
+ Copyright(c) by BRASILPREV
+
+ All rights reserved.
+
+ This software is confidential and proprietary information of
+ BRASILPREV ("Confidential Information").
+ You shall not disclose such Confidential Information and shall 
+ use it only in accordance with the terms of the license agreement
+ you entered with BRASILPREV.
+
+ ====================================================================
+-->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+
+	<display-name>RestEasyAloMundo</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+ 
+	<!-- Informa ao RestEasy qual é a classe que iniciará cada webservice -->
+	<context-param>
+		<param-name>javax.ws.rs.Application</param-name>
+		<param-value>com.br.webservice.pessoa.WsServico</param-value>
+	</context-param>
+ 
+	<context-param>
+		<param-name>resteasy.servlet.mapping.prefix</param-name>
+		<param-value>/rs</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>Resteasy</servlet-name>
+		<servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+	</servlet>
+ 
+	<!-- Mapeamento para que o RestEasy intecpect cada chamada para o webservice 
+		http://localhost:8080/RestEasyAloMundo/rs/* -->
+	<servlet-mapping>
+		<servlet-name>Resteasy</servlet-name>
+		<url-pattern>/rs/*</url-pattern>
+	</servlet-mapping>
+ 
+ 
+ 
+
+</web-app>

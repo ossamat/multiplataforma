@@ -1,0 +1,29 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="agendaJpa" transaction-type="JTA">
+    
+          <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> 
+      
+        <mapping-file>META-INF/mapping/Pessoa.hbm.xml</mapping-file>
+        <class>br.com.agenda.entidades.Pessoa</class>
+        
+        <properties>
+          <!--  <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/agenda"/>
+             <property name="hibernate.default_schema"  value="agenda"/> 
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="ecila2004"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/> -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />    
+           <property name="hibernate.format_sql" value="true" />
+               
+         <property name="hibernate.use_sql_comments" value="true"/> 
+
+         <property name="hibernate.hbm2ddl.auto" value="validate"/>
+          
+          
+        </properties>
+    </persistence-unit>
+</persistence>
